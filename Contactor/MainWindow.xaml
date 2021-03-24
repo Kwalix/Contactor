@@ -1,0 +1,33 @@
+﻿<Window x:Class="Contactor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Contactor"
+        mc:Ignorable="d"
+        Title="Contactor" Height="500" Width="900" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
+    <DockPanel LastChildFill="True">
+        <Menu DockPanel.Dock="Top" Height="25">
+            <MenuItem Header="_File" Height="24">
+                <MenuItem Header="_Open" IsCheckable="true" />
+                <MenuItem Header="_Close" IsCheckable="true" />
+                <MenuItem Header="_Save" IsCheckable="true" />
+            </MenuItem>
+        </Menu>
+        <DockPanel LastChildFill="False" Height="461">
+            <Grid DockPanel.Dock="Left" Width="209">
+                <Grid.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF8A2387"/>
+                        <GradientStop Color="#FFF27121" Offset="1"/>
+                        <GradientStop Color="#FFE94057" Offset="0.5"/>
+                    </LinearGradientBrush>
+                </Grid.Background>
+                <Label Content="Contactor" HorizontalAlignment="Left" Margin="11,10,0,0" VerticalAlignment="Top" FontSize="36" FontFamily="Montserrat" FontWeight="Regular" FontStyle="Normal" FontStretch="Medium"/>
+
+
+            </Grid>
+        </DockPanel>
+    </DockPanel>
+
+</Window>
