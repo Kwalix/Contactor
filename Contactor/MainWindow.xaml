@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Contactor"
         mc:Ignorable="d"
-        Title="Contactor" Height="500" Width="900" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
+        Title="Contactor" Height="500" Width="900" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" Icon="/Images/icon.ico">
     <DockPanel LastChildFill="True">
         <Menu DockPanel.Dock="Top" Height="23">
             <MenuItem Header="_File" Height="24">
@@ -14,7 +14,7 @@
                 <MenuItem Header="_Save" IsCheckable="true" />
             </MenuItem>
         </Menu>
-        <DockPanel LastChildFill="False">
+        <DockPanel LastChildFill="True">
             <Grid DockPanel.Dock="Left" Width="209">
                 <Grid.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -25,8 +25,20 @@
                 </Grid.Background>
                 <Label x:Name="AppTitle" Content="Contactor" HorizontalAlignment="Left" Margin="11,10,0,0" VerticalAlignment="Top" FontSize="36" FontFamily="Montserrat" FontWeight="Regular" FontStyle="Normal" FontStretch="Medium"/>
                 <Label x:Name="VersionLabel" Content="Version: 1.0.0-alpha" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+                
+                
 
-
+            </Grid>
+            <Grid>
+                <DataGrid IsReadOnly="True" MaxColumnWidth="200" AutoGenerateColumns="False" x:Name="ContactList" Margin="10,194,10,10">
+                    <DataGrid.Columns >
+                        <DataGridTextColumn Header="First name" Binding="{Binding Path=FirstName}" MinWidth="50" />
+                        <DataGridTextColumn Header="Last name" Binding="{Binding Path=LastName}" MinWidth="50" />
+                        <DataGridTextColumn Header="Age" Binding="{Binding Path=Age}" MinWidth="50" />
+                        <DataGridTextColumn Header="E mail" Binding="{Binding Path=Mail}" MinWidth="50" />
+                        <DataGridTextColumn Header="Phone" Binding="{Binding Path=Phone}" MinWidth="50" />
+                    </DataGrid.Columns>
+                </DataGrid>
             </Grid>
         </DockPanel>
     </DockPanel>

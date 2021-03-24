@@ -8,10 +8,14 @@
 
   <ItemGroup>
     <None Remove="Fonts\Montserrat-Regular.ttf" />
+    <None Remove="Images\icon.ico" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Fonts\Montserrat-Regular.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\icon.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
