@@ -7,14 +7,14 @@
         mc:Ignorable="d"
         Title="Contactor" Height="500" Width="900" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
     <DockPanel LastChildFill="True">
-        <Menu DockPanel.Dock="Top" Height="25">
+        <Menu DockPanel.Dock="Top" Height="23">
             <MenuItem Header="_File" Height="24">
                 <MenuItem Header="_Open" IsCheckable="true" />
                 <MenuItem Header="_Close" IsCheckable="true" />
                 <MenuItem Header="_Save" IsCheckable="true" />
             </MenuItem>
         </Menu>
-        <DockPanel LastChildFill="False" Height="461">
+        <DockPanel LastChildFill="False">
             <Grid DockPanel.Dock="Left" Width="209">
                 <Grid.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -23,7 +23,8 @@
                         <GradientStop Color="#FFE94057" Offset="0.5"/>
                     </LinearGradientBrush>
                 </Grid.Background>
-                <Label Content="Contactor" HorizontalAlignment="Left" Margin="11,10,0,0" VerticalAlignment="Top" FontSize="36" FontFamily="Montserrat" FontWeight="Regular" FontStyle="Normal" FontStretch="Medium"/>
+                <Label x:Name="AppTitle" Content="Contactor" HorizontalAlignment="Left" Margin="11,10,0,0" VerticalAlignment="Top" FontSize="36" FontFamily="Montserrat" FontWeight="Regular" FontStyle="Normal" FontStretch="Medium"/>
+                <Label x:Name="VersionLabel" Content="Version: 1.0.0-alpha" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
 
 
             </Grid>
