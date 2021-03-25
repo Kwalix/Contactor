@@ -4,20 +4,64 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>Images\icon.ico</ApplicationIcon>
+    <Authors>Kwalix</Authors>
+    <Description>User Management application</Description>
+    <Copyright />
+    <RepositoryUrl>https://github.com/Kwalix/Contactor</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="Fonts\Montserrat-Regular.ttf" />
+    <None Remove="Images\csv-file.png" />
     <None Remove="Images\icon.ico" />
+    <None Remove="Images\json-file.png" />
+    <None Remove="Images\new.png" />
+    <None Remove="Images\open-file-button.png" />
+    <None Remove="Images\xml-file.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="LiteDB" Version="5.0.10" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Fonts\Montserrat-Regular.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Images\csv-file.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Images\icon.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Images\json-file.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\new.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\open-file-button.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\xml-file.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="UserPreferences.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>UserPreferences.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="UserPreferences.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>UserPreferences.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 
 </Project>

@@ -8,10 +8,38 @@
         Title="Contactor" Height="500" Width="900" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" Icon="/Images/icon.ico">
     <DockPanel LastChildFill="True">
         <Menu DockPanel.Dock="Top" Height="23">
-            <MenuItem Header="_File" Height="24">
-                <MenuItem Header="_Open" IsCheckable="true" />
-                <MenuItem Header="_Close" IsCheckable="true" />
-                <MenuItem Header="_Save" IsCheckable="true" />
+            <MenuItem Header="_File" Height="23">
+                <MenuItem Header="_New Database" IsCheckable="False" Click="NewDB_Click">
+                    <MenuItem.Icon>
+                        <Image Source="/Images/new.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Open" IsCheckable="False" Click="OpenDB_Click">
+                    <MenuItem.Icon>
+                        <Image Source="/Images/open-file-button.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Close" IsCheckable="False" />
+                <MenuItem Header="_Save" IsCheckable="False" />
+                <MenuItem Header="_Export" IsCheckable="False">
+                    <MenuItem Header="_As CSV" IsCheckable="False">
+                        <MenuItem.Icon>
+                            <Image Source="/Images/csv-file.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="_As XML" IsCheckable="False">
+                        <MenuItem.Icon>
+                        <Image Source="/Images/xml-file.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                    <MenuItem Header="_As JSON" IsCheckable="False">
+                        <MenuItem.Icon>
+                            <Image Source="/Images/json-file.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="_Edit">
             </MenuItem>
         </Menu>
         <DockPanel LastChildFill="True">
@@ -25,18 +53,29 @@
                 </Grid.Background>
                 <Label x:Name="AppTitle" Content="Contactor" HorizontalAlignment="Left" Margin="11,10,0,0" VerticalAlignment="Top" FontSize="36" FontFamily="Montserrat" FontWeight="Regular" FontStyle="Normal" FontStretch="Medium"/>
                 <Label x:Name="VersionLabel" Content="Version: 1.0.0-alpha" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
-                
-                
-
+                <Button x:Name="AddUserBtn" IsEnabled="False" Content="Add" Margin="22,110,23,0" VerticalAlignment="Top" Height="48" FontFamily="Montserrat" FontSize="24" RenderTransformOrigin="0.5,0.5" Background="{x:Null}" BorderThickness="3,3,3,3" BorderBrush="Black" Click="AddUserBtn_Click">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="20"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button x:Name="DelUserBtn" IsEnabled="False" Content="Remove" Margin="22,199,23,0" VerticalAlignment="Top" Height="48" FontFamily="Montserrat" FontSize="24" RenderTransformOrigin="0.5,0.5" Background="{x:Null}" BorderThickness="3,3,3,3" BorderBrush="Black">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="20"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
             </Grid>
             <Grid>
                 <DataGrid IsReadOnly="True" MaxColumnWidth="200" AutoGenerateColumns="False" x:Name="ContactList" Margin="10,194,10,10">
                     <DataGrid.Columns >
-                        <DataGridTextColumn Header="First name" Binding="{Binding Path=FirstName}" MinWidth="50" />
-                        <DataGridTextColumn Header="Last name" Binding="{Binding Path=LastName}" MinWidth="50" />
-                        <DataGridTextColumn Header="Age" Binding="{Binding Path=Age}" MinWidth="50" />
-                        <DataGridTextColumn Header="E mail" Binding="{Binding Path=Mail}" MinWidth="50" />
-                        <DataGridTextColumn Header="Phone" Binding="{Binding Path=Phone}" MinWidth="50" />
+                        <DataGridTextColumn Header="First name" Binding="{Binding Path=FirstName}" MinWidth="100" />
+                        <DataGridTextColumn Header="Last name" Binding="{Binding Path=LastName}" MinWidth="100" />
+                        <DataGridTextColumn Header="Age" Binding="{Binding Path=Age}" MinWidth="60" />
+                        <DataGridTextColumn Header="E mail" Binding="{Binding Path=Mail}" MinWidth="200" />
+                        <DataGridTextColumn Header="Phone" Binding="{Binding Path=Phone}" MinWidth="150" />
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>
